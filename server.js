@@ -38,12 +38,7 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-
-
-// SPA catch-all: any non-API route serves index.html
-app.get(/^(?!\/api).*/, (req, res) => {
-    res.sendFile(path.join(clientDist, 'index.html'));
-});
+//JUST FOR COMMENT
 
 // ——— Error Handler ———
 app.use(errorHandler);
