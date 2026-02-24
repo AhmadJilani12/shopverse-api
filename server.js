@@ -38,9 +38,7 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// ——— Serve Production Frontend ———
-const clientDist = path.join(__dirname, '..', 'client', 'dist');
-app.use(express.static(clientDist));
+
 
 // SPA catch-all: any non-API route serves index.html
 app.get(/^(?!\/api).*/, (req, res) => {
